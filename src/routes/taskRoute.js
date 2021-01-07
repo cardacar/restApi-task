@@ -1,16 +1,16 @@
 import {Router} from 'express'
-import Task from '../models/Task'
+
+//Importando el controller
+import * as taskCtrl from "../controllers/task.controllers";
 const router = Router()
 
-router.get('/', (req,res)=>{
-    res.send('task')
-});
-
-router.post('/', async (req,res)=>{
-    const newTask = new Task({title: req.body.title, description: req.body.description})
-    await newTask.save();
-    console.log(newTask)
-    res.json('New task create')
-})
+//Ruta para crear una tarea
+router.post('/', taskCtrl.createTask);
+//Ruta para ver todas las tareas
+router.get('/', taskCtrl.findAllTask);
+//Ruta para buscar una tarea por id
+router.get('/:id', taskCtrl.findOneTask);
+//Eliminando una tarea
+router.delete('/:id', taskCtrl.deleteTaks);
 
 export default router;

@@ -8,6 +8,12 @@ POST http://localhost:3000/api/task
 Content-Type: application/json
 
 { 
-    "title": "Hacer un sitio web", 
-    "description": "Trabajo fleelance"
+    "title": "Hacer un sitio web en angular", 
+    "description": "Trabajo freelance"
 }
+
+###
+GET http://localhost:3000/api/task/5ff789e4e8443431509e4805
+
+###
+DELETE http://localhost:3000/api/task/5ff7811e6a0da41f208ad733
