@@ -1,11 +1,6 @@
-import express from 'express';
+import app from './app'
+import './database'
 
-const app = express();
 
-app.listen(3000, ()=>{
-    console.log('Server on port 3000');
-});
-
-//Initialized
-
-//Midleware
+app.listen(app.get('port'))
+console.log('server on port ', app.get('port'));
