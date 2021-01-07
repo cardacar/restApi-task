@@ -1,0 +1,13 @@
+
+//Peticiones a las tareas
+
+###
+GET  http://localhost:3000/api/task
+###
+POST http://localhost:3000/api/task
+Content-Type: application/json
+
+{ 
+    "title": "Hacer un sitio web", 
+    "description": "Trabajo fleelance"
+}
