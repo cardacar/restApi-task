@@ -9,10 +9,15 @@ export const findAllTask = async (req,res)=>{
 
 export const createTask = async (req,res)=>{
     //Guardando datos en Task
-    const newTask = new Task({title: req.body.title, description: req.body.description})
+    const newTask = new Task({
+        title: req.body.title,
+        description: req.body.description,
+        done: req.body.done ? req.body.done: false
+    })
     const taskSave = await newTask.save();
     res.json(taskSave)
 }
+
 
 export const findOneTask = async (req, res)=>{
     //Buscando una tarea en la bd
@@ -26,4 +31,10 @@ export const deleteTaks = async(req,res) =>{
     res.json({
         message: 'Task deleted succesfully'
     })
+}
+
+
+export const findAllDoneTask = async(req, res)=>{
+    const tasks = await Task.find({done:true});
+    res.json(tasks);
 }
