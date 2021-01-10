@@ -8,15 +8,23 @@ POST http://localhost:3000/api/task
 Content-Type: application/json
 
 { 
-    "title": "Hacer un sitio web en javascript", 
+    "title": "Tarea 1", 
     "description": "Trabajo freelance"
 }
 
 ###
-GET http://localhost:3000/api/task/5ff789e4e8443431509e4805
+GET http://localhost:3000/api/task/5ff7c0f435418c35a8765cf8
 
 ###
 DELETE http://localhost:3000/api/task/5ff7811e6a0da41f208ad733
 
 ###
 GET http://localhost:3000/api/task/done
+
+###
+PUT http://localhost:3000/api/task/5ff787d64fa6c50d549e5f8d
+Content-Type: application/json
+
+{
+    "title": "Crear un sitio web"
+}

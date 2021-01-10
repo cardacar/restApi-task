@@ -1,11 +1,11 @@
 //Creando el modelo de la tarea con mongoose schema y model
-import {Schema, model} from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 const taskSchema = new Schema({
     title: {
         type: String,
         required: true,
-        trim:true
+        trim: true
     },
     description: {
         type: String,
@@ -16,10 +16,10 @@ const taskSchema = new Schema({
         default: false
     }
 }, {
-    versionKey:false,
+    versionKey: false,
     timestamps: true
 });
 
-export default model( 'task', taskSchema);
+export default model('task', taskSchema);
 
 

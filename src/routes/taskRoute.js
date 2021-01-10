@@ -1,4 +1,4 @@
-import {Router} from 'express'
+import { Router } from 'express'
 
 //Importando el controller
 import * as taskCtrl from "../controllers/task.controllers";
@@ -14,6 +14,7 @@ router.get('/done', taskCtrl.findAllDoneTask);
 router.get('/:id', taskCtrl.findOneTask);
 //Eliminando una tarea
 router.delete('/:id', taskCtrl.deleteTaks);
-
+//Ruta para actualizar la tarea
+router.put('/:id', taskCtrl.updateTask);
 
 export default router;
