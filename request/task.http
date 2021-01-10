@@ -4,8 +4,8 @@
 ###
 GET  http://localhost:3000/api/task
 
-###
-GET  http://localhost:3000/api/task?page=5&zise=0
+### 
+GET  http://localhost:3000/api/task?page=0&zise=4
 
 ###
 POST http://localhost:3000/api/task
