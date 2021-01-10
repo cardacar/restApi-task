@@ -1,5 +1,6 @@
 //Creando el modelo de la tarea con mongoose schema y model
 import { Schema, model } from 'mongoose'
+import mongoosePaginate from 'mongoose-paginate-v2'
 
 const taskSchema = new Schema({
     title: {
@@ -20,6 +21,7 @@ const taskSchema = new Schema({
     timestamps: true
 });
 
+taskSchema.plugin(mongoosePaginate);
 export default model('task', taskSchema);
 
 

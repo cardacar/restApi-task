@@ -3,6 +3,10 @@
 
 ###
 GET  http://localhost:3000/api/task
+
+###
+GET  http://localhost:3000/api/task?page=5&zise=0
+
 ###
 POST http://localhost:3000/api/task
 Content-Type: application/json

@@ -1,10 +1,13 @@
 //Importando el modelo
 import Task from '../models/Task'
+import { getPagination } from "../libs/getPagination";
 
 export const findAllTask = async (req, res) => {
     //pidiendo datos de Task
     try {
-        const tasks = await Task.find()
+        const {size,page} = req.query
+        const {limit, offset} = getPagination(page, size)
+        const tasks = await Task.paginate({},{offset, limit})
         res.json(tasks);
     } catch (error) {
         res.status(500).json({
@@ -39,7 +42,7 @@ export const findOneTask = async (req, res) => {
         const { id } = req.params;
         //Buscando una tarea en la bd
         const task = await Task.findById(id);
-        if (!task) 
+        if (!task)
             return res
                 .status(400)
                 .json({ message: `Task with id ${id} does not exists ` })
@@ -58,7 +61,7 @@ export const deleteTaks = async (req, res) => {
         res.json({
             message: 'Task deleted succesfully'
         })
-        
+
     } catch (error) {
         res.status(500).json({
             message: `Connot delete task with id: ${id}`
